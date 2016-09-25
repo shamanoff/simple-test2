@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragment/imports :: import_header(~{::title},~{})}">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+</head>
+<body>
+<div class="row expanded topBar">
+    <div class="large-12 columns">
+        <h3>Welcome to News Aggregator</h3>
+    </div>
+</div>
+
+<div class="row bg">
+
+
+    <div class="small-12 medium-6 columns">
+        <div class="item callout secondary" th:each="news : ${newsCol1}">
+            <h5 th:text="${news.title}"></h5>
+            <a th:href="${news.link}"  th:text="${news.link}"></a>
+        </div>
+    </div>
+
+    <div class="small-12 medium-6 columns item">
+        <div class="item callout secondary" th:each="news : ${newsCol2}">
+            <h5 th:text="${news.title}"></h5>
+            <a th:href="${news.link}" th:text="${news.link}"></a>
+        </div>
+    </div>
+</div>
+<th:block th:include="~{fragment/imports :: import_script(~{})}">
+</th:block>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="import_header(title, links)">
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" th:href="@{css/app.css}"/>
+    <th:block th:replace="${links}"/>
+
+    <title th:replace="${title}">The awesome application</title>
+</head>
+<body>
+<th:block th:fragment="import_script(script)">
+    <script th:src="@{/webjars/jquery/2.2.2/jquery.min.js}"></script>
+    <script th:src="@{/webjars/foundation/6.2.3/dist/foundation.min.js}"></script>
+    <script th:src="@{js/app.js}"></script>
+    <th:block th:replace="${script}"/>
+</th:block>
+</body>
+</html>
