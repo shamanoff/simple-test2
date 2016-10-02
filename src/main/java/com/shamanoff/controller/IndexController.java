@@ -42,6 +42,7 @@ public class IndexController {
     @GetMapping("/news/{id}")
     @ResponseBody
     public News newsById(@PathVariable Long id) {
-        return News.of(id, "Breaking News!", "lenta.ru");
+        return new News("testing");
+//        return News(id, "Breaking News!", "lenta.ru");
     }
 }
